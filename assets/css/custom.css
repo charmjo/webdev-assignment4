@@ -1,0 +1,15 @@
+.no-list-style-type {
+    list-style-type: none;
+}
+
+.alert {
+    display:none;
+}
+
+#receipt-container {
+    display:none;
+}
+
+/* #logo {
+
+} */
