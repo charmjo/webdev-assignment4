@@ -13,6 +13,7 @@ class User {
     public function addNewUser ($_fname,$_lname,$_email,$_password,$_accessLevel) {
         
         // TODO: I need to handle this better...
+        // Validate email. Placed it in a static method for now. 
         if (!User::isValidEmail($_email)) return false;
         
         $conn = new Database ();
