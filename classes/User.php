@@ -11,6 +11,10 @@ class User {
     // UNYA NAKO MAG-REFACTOR KAY WALA NAJUD KOY TIME.
     // working.
     public function addNewUser ($_fname,$_lname,$_email,$_password,$_accessLevel) {
+        
+        // TODO: I need to handle this better...
+        if (!User::isValidEmail($_email)) return false;
+        
         $conn = new Database ();
         $conn->connectDb();
 
@@ -64,5 +68,11 @@ class User {
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
+    // TODO: place this in a separate validator class
+    public static function isValidEmail ($email) {
 
+        if (preg_match(REGEX_EMAIL, $email)) return true;
+        return false;
+
+    }
 }

@@ -4,6 +4,7 @@
 
   session_start();
 
+  // TODO: MAKE THIS STATIC!
   if(!isset($_SESSION['access_level']) || ($_SESSION['access_level'] != ADMIN)) {
     $logout = new Login();
     $logout->logoutUser();

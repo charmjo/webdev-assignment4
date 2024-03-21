@@ -5,8 +5,7 @@ $( document ).ready(function() {
     $("#order-form").on('submit', function (e) {
       e.preventDefault(); // prevent the default functionality of form submission. forms automatically reload when they submit.
       
-      // serialize gets the name of the fiels.
-      console.log($("#order-form").serialize());
+      // serialize gets the name of the fields.
       var formData = $("#order-form").serialize();
 
       // sned that data to the process page
@@ -20,8 +19,6 @@ $( document ).ready(function() {
           formData : formData,
         },
         success : function (output) {
-          console.log(output); 
-
           var outputObj = JSON.parse(output);
           if(outputObj.response == "success"){
             $("#receipt-container").show();
@@ -95,7 +92,6 @@ $( document ).ready(function() {
       e.preventDefault(); // prevent the default functionality of form submission. forms automatically reload when they submit.
     
       // serialize gets the name of the fiels.
-      console.log($("#manager-form").serialize());
       var formData = $("#manager-form").serialize();
 
       // sned that data to the process page
